@@ -1,0 +1,11 @@
+https://ibus.tbkc.gov.tw/xmlbus/StaticData/GetRoute.xml
+
+
+
+
+https://ibus.tbkc.gov.tw/xmlbus/StaticData/GetStop.xml?routeIds=16
+
+
+
+
+https://ibus.tbkc.gov.tw/xmlbus/GetBusData.xml?routeids=12

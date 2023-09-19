@@ -1,0 +1,12 @@
+All stations content
+https://ibus.tbkc.gov.tw/xmlbus/StaticData/GetRoute.xml
+
+All Buses time and content
+https://ibus.tbkc.gov.tw/xmlbus/StaticData/GetStop.xml
+
+Bus time and content
+https://ibus.tbkc.gov.tw/xmlbus/StaticData/GetStop.xml?routeIds=16
+
+Another one bus content
+https://ibus.tbkc.gov.tw/xmlbus/GetBusData.xml?routeids=12
+

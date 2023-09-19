@@ -1,0 +1,44 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+TWbank
+{% endblock %}
+
+{% block css %}
+
+<style>
+
+table th{
+	color: #ffffff;
+}
+
+</style>
+
+{% endblock %}
+
+{% block maincontent %}
+
+<div style="margin-top: 50px"></div>
+
+<table width="90%" border="1" align="center" cellspacing="4">
+	
+	<tr>
+		<th bgcolor="#000000">幣別</th>
+		<th bgcolor="#000000">現今買入</th>
+		<th bgcolor="#000000">現今賣出</th>
+	</tr>
+
+
+{% for item in rate %}
+	<tr>
+		<td>{{item.0}}</td>
+		<td>{{item.1}}</td>
+		<td>{{item.2}}</td>
+	</tr>
+{% endfor %}
+
+
+</table>
+
+{% endblock %}
+

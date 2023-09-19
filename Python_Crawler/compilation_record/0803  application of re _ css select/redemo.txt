@@ -1,0 +1,10 @@
+html = """
+<div class="content">
+E-Mail：<a href="mailto:mail@test.com.tw">mail</a><br>
+E-Mail2：<a href="mailto:mail2@test.com.tw">mail2</a><br>
+<ul class="price">定價：360 元 </ul>
+<img src="http://test.com.tw/p1.jpg">
+<img src="http://test.com.tw/p2.jpg">
+<img src="http://test.com.tw/p3.png">
+</div>
+"""

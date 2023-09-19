@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>這個是首頁</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/news.css')}}">
+</head>
+<body>
+
+<!--
+這個是註解
+-->
+<div id='banner'>
+</div>
+
+<div id='menu'>
+
+	<ul>
+		<li><a href='#'>利率</a></li>
+		<li><a href='#'>商品</a></li>
+		<li><a href='#'>美食</a></li>
+		<li><a href='/news'>新聞</a></li>
+		<li><a href='#'>聯絡我們</a></li>
+	</ul>
+
+
+
+</div>
+
+<div id='content'>
+
+	{% for item in allnews %}
+
+	<div class='newsarea'>
+
+		<img src="{{item.photo_url}}">
+		<p>{{item.title}}</p>
+
+	</div>
+
+	{% endfor %}
+	
+	
+
+
+
+</div>
+
+
+<div id='footer'>
+</div>
+
+
+
+
+</body>
+</html>

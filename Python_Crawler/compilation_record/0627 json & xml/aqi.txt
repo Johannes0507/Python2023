@@ -1,0 +1,14 @@
+爬蟲
+
+有整理：
+	1.json
+	2.xml
+	3.csv
+
+未整理：
+	1.html
+	2.Ajax -> json
+	3.裝 Google Bot
+	4.反爬蟲
+
+印出站名

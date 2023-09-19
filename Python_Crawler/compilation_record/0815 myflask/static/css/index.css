@@ -1,0 +1,48 @@
+body{
+	/* 前後左右為零 */
+	margin: 0; 
+
+}
+
+
+#banner{
+	height: 60px;
+	width: 100%;
+}
+
+#menu{
+	height: 45px;	
+	width: 100%;
+	background-color: #044996;
+}
+
+#content{
+	min-height: 450px;
+	width: 100%;
+}
+
+#footer{
+	height: 50px;
+	width: 100%;
+	background: #7CEECE;
+	color: #FFFFFF;
+}
+
+#menu li{
+	list-style: none;
+	float: left;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+#menu ul{
+	line-height: 45px;
+	margin-left: 30%;
+}
+
+#menu a{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 22px;
+	font-weight: bold;
+}
