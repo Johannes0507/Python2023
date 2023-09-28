@@ -1,0 +1,36 @@
+{% extends 'Base.html' %}
+
+{% block titleblock %}
+最新消息
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/news.css">
+{% endblock %}
+
+
+{% block mainArea %}
+
+
+		{% for item in news_list %}
+
+
+			<div class="newsInfo">
+				<div class="newsImg">
+					<img src="{{item.photo_url}}">
+				</div>
+				<div class="newsContent">
+					<p>{{item.title}}</p>
+					<span>{{item.content}}</span>
+				</div>
+			</div>
+
+
+			
+
+		{% endfor %}
+
+
+{% endblock %}
+
+

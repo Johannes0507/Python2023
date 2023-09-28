@@ -1,0 +1,29 @@
+.newsInfo{
+	clear:both;
+	padding:2%;
+}
+
+.newsImg{
+	float:left;
+	width:22%;
+}
+.newsImg img{
+	width: 100%;
+}
+
+.newsContent{
+	float:left;
+	height:170px;
+	width:75%;
+	margin-left:2%;
+	text-overflow: ellipsis;
+	overflow:hidden;
+}
+
+.newsContent p{
+	font-size: 20px;
+	font-weight: bold;
+
+}
+
+

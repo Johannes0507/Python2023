@@ -1,0 +1,20 @@
+1. pip3 install virtualenvwrapper-win
+
+2. mkvirtualenv mydjango
+
+deactivate 退出虛擬環境
+
+workon 列出虛擬環境
+
+
+3. workon mydjango
+
+3-1. pip  install django
+
+4. cd\
+
+5. mkdir lccdjango
+
+6. cd lccdjango
+
+7. django-admin startproject  lcc
