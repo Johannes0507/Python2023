@@ -1,0 +1,28 @@
+.newsInfo{
+	clear: both;
+	padding: 2%;
+}
+
+.newsImg{
+	float: left;
+	width: 22%;
+}
+
+
+.newsImg img{
+	width: 100%;
+}
+
+.newsContent {
+	float: left;
+	width: 75%;
+	height: 170px;
+	margin-left: 2%;
+	text-overflow: ellipsis; 
+	overflow: hidden;	/* 超過的時候隱藏*/
+}
+
+.newsContent p{
+	font-size: 20px;
+	font-weight: bold;
+}

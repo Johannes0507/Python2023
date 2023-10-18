@@ -96,6 +96,7 @@ def contact():
         sql = "insert into contact(subject,name,email,content,create_date) values('{}','{}','{}','{}','{}')".format(title,username,email,content,cdate)
         db.cur.execute(sql)
         db.conn.commit()
+        
     return redirect(url_for('message'))    
 
 

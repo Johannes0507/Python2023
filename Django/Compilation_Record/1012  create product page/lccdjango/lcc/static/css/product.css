@@ -1,0 +1,18 @@
+.GoodArea {
+	width: 100%;
+	margin-top: 50px;
+}
+
+.goodsinfo {
+	width: 22%;
+	float: left;
+	height: 450px;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	margin: 1%;
+}
+
+.goodsinfo img{
+	width: 100%;
+	border-radius: 15px;
+}
