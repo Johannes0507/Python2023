@@ -1,0 +1,34 @@
+#contact {
+	margin-left: 30%;
+	margin-bottom: 100%;
+}
+
+.contact-form {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.5em 0.6em;
+	line-height: 1.15em;
+	width: 450px;
+	margin-bottom: 100px;
+}
+
+.form-control {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.5em 0.6em;
+	line-height: 1.15em;
+	width: 400px;
+	margin-bottom: 10px;
+}
+
+.form-group {
+	margin: 2%;
+}
+
+
+.btn_submit {	
+	background-color: #0000ff;
+	color: #ffffff;
+	padding: 0.5em 1em;
+	border: transparent;
+}
