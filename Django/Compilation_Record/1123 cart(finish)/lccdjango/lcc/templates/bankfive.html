@@ -1,0 +1,46 @@
+{% extends 'Base.html' %}
+
+{% block titleblock %}
+	銀行後五碼回報
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/contact.css">
+{% endblock %}
+
+
+
+{% block mainArea %}
+
+
+		<div style="margin-top:50px"></div>
+		<div id="cartDiv">			
+			<p class="title">銀行五碼</p>
+			<form action="/bankfive/" method="POST">
+
+				{% cdrf_token %}
+				<table border="0" align="center" cellpadding="10" cellspacing="0"></table>
+				<tr>
+					<td>訂單編號</td>
+					<input type="text" name="orderid" value="{{ bank.0.id }}" readonly />
+				</tr>
+
+				<tr>
+					<td>訂單金額</td>
+					<input type="text" name="amount" value="{{ bank.0.grandtotal }}" readonly />
+				</tr>
+
+				<tr>
+					<td>後五碼</td>
+					<input type="text" name="bankfive" value="{{ bank.0.bankaccount|default_if_none:'' }}" required />
+				</tr>
+
+				<td>
+					<button type="submit">送出</button>
+				</td>
+
+			</form>
+
+		</div>
+
+{% endblock %}

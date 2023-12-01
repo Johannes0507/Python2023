@@ -1,0 +1,111 @@
+{% extends 'Base.html' %}
+
+{% block titleblock %}
+	購物車
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/contact.css">
+{% endblock %}
+
+{% block js %}
+<script>
+	function confirmLink(message){
+		document.returnValue = confirm(message);
+	}	
+</script>
+{% endblock %}
+
+{% block mainArea %}
+
+	{% if empty == 1 %}
+
+		<div stype="margin-top:50px"></div>
+		<h2>購物車是空的，請至產品頁</h2>
+
+	{% else %}
+
+		<div style="margin-top:50px"></div>
+		<div id="cartDiv">
+			<form action='/addtocart/update/' method='post' name='form1' id='form1'>
+				{% csrf_token %}
+
+				<table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+					<tr>
+						<th width="60" align='center'>取消</th>
+						<th align="left">商品名稱</th>
+						<th width="80" align="center">單價</th>
+						<th width="80" align="center">數量</th>
+						<th width="80" align="center">金額</th>
+					</tr>
+
+			<!--	forloop.counter 由1開始遞增到結束
+					forloop.counter0 由0開始遞減到結束
+					forloop.revcounter 由總數遞減到至1
+					forloop.revocunter0 由總數遞減至0
+					forloop.first 判斷是否是第一次
+					forloop.last 判斷是否是最後一次 -->
+
+					{% for unit in goodlist %}
+						<tr>							
+							<td bgcolor="#0f0">
+								<a 
+									href="/addtocart/delete/{{ forloop.counter0 }}" class="delcart"
+									onclick="confirmLink('確定刪除此商品'); return document.returnValue">刪除
+								</a>
+							</td>							
+							<td align="left">{{ unit.0 }}</td>
+							<td align="center">{{ unit.1 }}</td>
+							<td width="80" align="content">
+								<input type="name" name="qty{{ forloop.counter0 }}" id="qty{{ forloop.counter0 }}" value="{{ unit.2 }}" size="2">
+							</td>
+							<td width="100" align="center"><strong>${{ unit.3 }}</strong></td>
+						</tr>
+					{% endfor %}
+
+					<tr>
+						<td colspan="4" align="left" bgcolor="#fff">小計</td>
+						<td align="center" bgcolor="#fff">${{total}}</td>
+					</tr>
+
+					{% if total < 10000 %}
+						<tr>
+							<td colspan="4" align="left" bgcolor="#fff">運費</td>
+							<td align="center" bgcolor="#fff">$200</td>
+						</tr>					
+					{% endif %}
+
+					<tr>
+						<td colspan="4" align="left" bgcolor="#fff">總計</td>
+						<td align="center" bgcolor="#fff">{{ grandtotal }}</td>
+					</tr>						
+
+				</table>
+
+				<table border="0" align="center" cellpadding="10" callspacing="0">
+					<tr>
+						<td>
+							<input type="button" name="Continue" value="繼續購物" onclick="window.location='/product'">
+						</td>
+						<td>
+							<input type="submit" name="Submit" value="更新購物車" onclick="window.location='/cart'">
+						</td>
+						<td>
+							<input type="button" name="Empty" value="清空購物車" onclick="window.location='/addtocart/empty'">
+						</td>
+						<td>
+							<input type="button" name="Order" value="我要結帳" onclick="window.location='/cartorder'">
+						</td>																		
+					</tr>
+				</table>
+			</form>
+		</div>	
+
+
+
+
+
+	{% endif %}
+
+
+{% endblock %}

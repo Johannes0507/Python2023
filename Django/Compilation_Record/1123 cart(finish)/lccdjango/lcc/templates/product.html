@@ -1,0 +1,72 @@
+{% extends 'Base.html' %}
+
+{% block titleblock %}
+	產品
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/product.css">
+{% endblock %}
+
+{% block mainArea %}
+
+	<div style="margin-top:50px;height:50px"></div>
+
+	<div>
+		<form action="" method="get">
+			關鍵字：<input type="text" name="q" /><br>
+			價格：<input type="text" name="startp" />至<input type="text" name="endp" /><br>
+			<input type="submit" value="查詢1" name='sub1' />
+			<input type="submit" value="搜尋" name='sub2' />
+
+		</form>
+	</div>
+
+
+	<div class="GoodsArea">
+
+		{% for row in data %}
+			<div class="goodsinfo">
+				<a href="{{row.link_url}}">
+
+					{% if 'https:' in row.photo_url %}
+
+						<img src="{{row.photo_url}}">
+
+					{% else %}	
+						<img src="https://fs.ecimg.tw{{row.photo_url}}">
+
+					{% endif %}	
+
+
+				</a>
+				<p>{{row.name}}</p>
+				<span>NT${{row.price}}</span>
+				<br>
+				<a href='/addtocart/add/{{row.id}}/'>加入購物車</a>
+			</div>
+		{% endfor %}
+
+
+	</div>
+
+	<div style="clear:both"></div>
+
+
+	<div style="float:left;height:60px;padding-top:100px;padding-left:45%">
+		{% if data.has_previous %}
+			<a href="?page={{data.previous_page_number}}&q={{q}}&startp={{sp}}&endp={{ep}}">上一頁</a>
+		{% endif %}
+
+
+		{% if data.has_next %}
+			<a href="?page={{data.next_page_number}}&q={{q}}&startp={{sp}}&endp={{ep}}">下一頁</a>
+		{% endif %}
+
+
+
+	</div>
+
+
+
+{% endblock %}

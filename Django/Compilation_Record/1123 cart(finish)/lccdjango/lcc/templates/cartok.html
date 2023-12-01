@@ -1,0 +1,17 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+訂購完成
+{% endblock %}
+
+{% block mainArea %}
+
+	<div style="margin-top: 50px;"></div>
+	<div id="cartDiv">
+		<p class="title">訂購完成資訊</p>
+		<p class="subject">非常感謝你的購買</p>
+		<p class="desc"><strong>{{ name }}</strong>(先生/小姐), 訂單已成立</p>
+		<p class="desc"><a href="/cartordercheck/?orderid={{ orderid }}&customemail={{ email }}">訂單詳細資料</a></p>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'Base.html' %}
+
+{% block titleblock %}
+	我的訂單
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/contact.css">
+{% endblock %}
+
+
+
+{% block mainArea %}
+
+
+		<div style="margin-top:50px"></div>
+		<div id="cartDiv">
+			
+			<p class="title">我的訂單列表</p>
+
+				<table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+					<tr>
+						<th width="60" align='center'>訂單編號</th>
+						<th width="80" align="center">訂單日期</th>
+						<th width="80" align="center">付款金額</th>
+						<th width="80" align="center">付款方式</th>
+					</tr>
+
+			<!--	forloop.counter 由1開始遞增到結束
+					forloop.counter0 由0開始遞減到結束
+					forloop.revcounter 由總數遞減到至1
+					forloop.revocunter0 由總數遞減至0
+					forloop.first 判斷是否是第一次
+					forloop.last 判斷是否是最後一次 -->
+
+					{% for unit in order %}
+						<tr>											
+							<td align="center">
+								<a href="/cartordercheck/?order_id={{ unit.id }}&customemail={{ request.session.cus_email }}">
+									{{ unit.id }}
+								</a>
+							</td>
+							<td align="center">{{ unit.create_date }}</td>
+							<td align="center">{{ unit.grandtotal }}</td>
+
+							{% if unit.paytype == "轉帳" %}
+
+								<td align="center">
+									<a href="/reportBank/?order_id={{ unit.id }}&customemail={{ request.session.cus_email }}">
+										{{ unit.paytype }}
+									</a>
+								</td>
+								
+							{% else %}
+
+							<td align="center">
+
+								{{ unit.paytype }}
+
+							</td>
+							{% endif %}
+						</tr>
+					{% endfor %}
+
+
+				</table>
+		</div>	
+
+
+{% endblock %}
